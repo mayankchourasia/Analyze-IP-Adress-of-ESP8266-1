@@ -1,19 +1,19 @@
 #include <ESP8266WiFi.h>
-const char* ssid= "m";
-const char* password="mahesh30";
+const char* ssid= "your hotspot name";
+const char* password="your password of hotspot";
 
 void setup() {
   pinMode(D0,OUTPUT);
   digitalWrite(D0,LOW);
 
-  Serial.begin(115200);
+  Serial.begin(115200); %baud rate required for ESP8266
   Serial.println();
-  Serial.print("WiFi connecting to");
+  Serial.print("WiFi connecting to"); 
   Serial.println(ssid);
   WiFi.begin(ssid,password);
   Serial.println();
   Serial.println("Connecting");
-  while(WiFi.status()!=WL_CONNECTED);
+  while(WiFi.status()!=WL_CONNECTED)  %if you put a semicolon it will shoe an error to you it is expected a semicolon pic but not in arduino
   {
     delay(500);
     Serial.print(".");
